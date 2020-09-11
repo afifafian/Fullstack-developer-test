@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin="">
+  </script>
+  <title>Leaflet JS</title>
+</head>
+<body>
+  <h1>Map Built with Leaflet JS</h1>
+  <div id="mapid"></div>
+</body>
+  <script>
+    const latitude = -6.2876
+    const longitude = 106.641
+    const mymap = L.map('mapid').setView([latitude, longitude], 15);
+
+    const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
+    const tileURl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+
+    const tiles = L.tileLayer( tileURl, { attribution });
+    tiles.addTo(mymap);
+    
+    const marker1 = L.marker([-6.2876, 106.641]).addTo(mymap);
+    const marker2 = L.marker([-6.287, 106.641]).addTo(mymap);
+    const marker3 = L.marker([-6.2877, 106.642]).addTo(mymap);
+    const marker4 = L.marker([-6.2873, 106.64]).addTo(mymap);
+    marker1.bindPopup("<b>You clicked marker: 1</b>");
+    marker2.bindPopup("<b>You clicked marker: 2</b>");
+    marker3.bindPopup("<b>You clicked marker: 3</b>");
+    marker4.bindPopup("<b>You clicked marker: 4</b>");
+
+  </script>
+  <style>
+    #mapid {
+      height: 700px;
+      width: 700;
+    }
+  </style>
+</html>

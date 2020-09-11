@@ -1,0 +1,32 @@
+1. Apa itu docker?
+
+Docker merupakan sebuah tool yang memungkinkan developer untuk membuat virtualisasi 
+pada tingkatan OS. Berbeda dengan Virtual Machine, virtualisasi yang digunakan docker
+yaitu dengan sistem yang disebut sebagai "container". Container memungkinkan developer 
+untuk membungkus suatu aplikasi, dengan segala bagian-bagian yang ada didalamnya seperti 
+libraries/dependencies, menjadi satu kesatuan package yang siap untuk di deploy.
+
+Keuntungan menggunakan docker dibandingkan dengan VM adalah dari segi ukuran docker jauh 
+lebih ringan, karena virtualisasi yang dibuat hanya pada level OS. Penggunaan docker juga 
+relatif lebih mudah dan fleksibel jika dibandingkan dengan VM, dimana proses build aplikasi 
+dapat dilakukan lebih cepat dan container itu sediri pun dapat dibuat ulang ataupun dihapus 
+sesuai keinginan.
+
+2. Penjelasan desain arsitektur
+
+Desain arsitektur yang dibuat disini, menggunakan 2 microservices yaitu users dan katalog.
+Kemudian kedua service tersebut dijalankan dengan menggunakan docker yang membungkus keduanya
+kedalam container yang berbeda, namun dapat dijalankan secara bersamaan dengan menggunakan docker
+compose, yang sudah disediakan pada file docker-compose.yml pada folder backend. Untuk list perintah
+docker container maupun compose tersedia di file README.md pada folder backend. Data user dapat diambil
+dari data JWT token yang dibuat otomatis ketika user melakukan proses login.
+
+Keterangan:
+
+- users services:
+  DB = MongoDB
+  Lang = nodejs
+
+- katalog services:
+  DB = MongoDB
+  Lang = nodejs

@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    user-service:
+        build: ./users
+        ports: 
+            - "3002:3002"
+    katalog-service:
+        build: ./katalog
+        ports: 
+            - "3003:3003"
+    mongo:
+        image: "mongo:4.0"
+        ports:
+            - "17017:27017"
+        command: mongod
