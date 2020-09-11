@@ -1,1 +1,4 @@
-# Fullstack-developer-test
+## How to run this app
+```
+nodemon app.js
+```
