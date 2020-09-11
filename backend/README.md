@@ -43,7 +43,7 @@ docker-compose down
 ```
 
 ## How to run this App
-- create image & run containers simultaneously 
+- Untuk container secara bersamaan, pada folder backend/services/, jalankan perintah berikut:
 ```
 docker-compose up --build
 ```
